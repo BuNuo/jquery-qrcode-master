@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>basic example</title>
+</head>
+<body>
+<!-- 支持中文和图片 -->
+<script src="../jquery.min.js"></script>
+<script type="text/javascript" src="../src/jquery.qrcode.js"></script>
+<script type="text/javascript" src="../src/qrcode.js"></script>
+
+<p>Render in table</p>
+<div id="qrcodeTable"></div>
+<p>Render in canvas</p>
+<div id="qrcodeCanvas"></div>
+<p>Render of 中文</p>
+<div id="code"></div>
+<p>Render of logo</p>
+<div id="qrcode"></div>
+<script>
+	
+	jQuery('#qrcodeTable').qrcode({
+		render	: "table",
+		text	: "http://hackcrown.com"
+	});	
+
+	jQuery('#qrcodeCanvas').qrcode({
+		text	: "http://hackcrown.com"
+	});	
+
+    $('#code').qrcode("hello中国");
+
+	$("#qrcode").qrcode({
+		render : "canvas",
+		text : "hello world",
+		width : "256",
+		height : "256",
+		background : "#ffffff",
+		foreground : "#000000",
+		src: '../2.png'
+	}
+	);
+</script>
+
+</body>
+</html>
